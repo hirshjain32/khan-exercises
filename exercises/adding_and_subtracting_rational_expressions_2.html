@@ -119,17 +119,16 @@
         <div class="hints">
             <p>In order to <span data-if="SIGN === '+'">add</span><span data-else>subtract</span> expressions,
                 they must have a common denominator.</p>
-            <p>The smallest common denominator is the least common multiple of <code><var>D1</var></code> and <code><var>D2</var></code>.</p>
-            <p><code>\lcm(<var>D1</var>, <var>D2</var>) = <var>DENOMINATOR</var></code></p>
-            <p><code>
-                <var>Y</var> = \dfrac{<var>F1</var>}{<var>F1</var>} \cdot \dfrac{<var>N1</var>}{<var>D1</var>}
-                <var>SIGN</var> \dfrac{<var>F2</var>}{<var>F2</var>} \cdot \dfrac{<var>N2</var>}{<var>D2</var>}
+            <p>The smallest common denominator is the least common multiple of <code>\blue{<var>D1</var>}</code> and <code>\green{<var>D2</var>}</code>. We can conclude based on these values that <code>\lcm(\blue{<var>D1</var>}, \green{<var>D2</var>}) = <var>DENOMINATOR</var></code>.</p>
+            <p>To come to a denominator of <code><var>DENOMINATOR</var></code>, we must modify each term:<code>
+                <var>Y</var> = \dfrac{<var>F1</var>}{<var>F1</var>} \cdot \blue{\dfrac{<var>N1</var>}{<var>D1</var>}}
+                <var>SIGN</var> \dfrac{<var>F2</var>}{<var>F2</var>} \cdot \green{\dfrac{<var>N2</var>}{<var>D2</var>}}
             </code></p>
-            <p><code><var>Y</var> = \dfrac{<var>NF1</var>}{<var>DENOMINATOR</var>}<var>SIGN</var> \dfrac{<var>NF2</var>}{<var>DENOMINATOR</var>}</code></p>
-            <p><code><var>Y</var> = \dfrac{<var>NF1</var> <var>SIGN</var><var>NF2</var>}{<var>DENOMINATOR</var>}</code></p>
-            <p><code><var>Y</var> = \dfrac{<var>NUMERATOR</var>}{<var>DENOMINATOR</var>}</code></p>
+            <p>With the common denominator, we have <code><var>Y</var> = \dfrac{\blue{<var>NF1</var>}}{<var>DENOMINATOR</var>}<var>SIGN</var> \dfrac{\green{<var>NF2</var>}}{<var>DENOMINATOR</var>}</code>.</p>
+            <p>Now that the denominators are equal, we can combine the numerators, getting <code><var>Y</var> = \dfrac{\blue{<var>NF1</var>} <var>SIGN</var>\green{<var>NF2</var>}}{<var>DENOMINATOR</var>}</code>.</p>
+            <p><span data-if="SIGN === '+'">Adding</span><span data-else>Subtracting</span> these values, we have <code><var>Y</var> = \dfrac{<var>NUMERATOR</var>}{<var>DENOMINATOR</var>}</code>.</p>
             <div data-if="FACTOR !== 1">
-                <div>Simplify the expression by dividing the numerator and denominator by <var>FACTOR</var>:</div>
+                <div>The numerator and denominator are each divisible by <var>FACTOR</var>. Simplifying this out of the expression:</div>
                 <div><code><var>Y</var> = \dfrac{<var>SIMPLENUMERATOR</var>}{<var>SIMPLEDENOMINATOR</var>}</code></div>
             </div>
         </div>
