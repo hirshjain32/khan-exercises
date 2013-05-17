@@ -83,15 +83,15 @@
                     which equals <code><var>ANSWER_REAL</var></code>.
                 </p>
                 <p>
-                    The imaginary components of the two complex numbers are <code class="hint_orange"><var>A_IMAG</var></code> and <code class="hint_blue"><var>B_IMAG</var></code>, respectively,
-                    so the imaginary component of the result will be
+                    The imaginary components of the two complex numbers are <code class="hint_orange"><var>A_IMAG</var>i</code> and <code class="hint_blue"><var>B_IMAG</var>i</code>, 
+					respectively. This means that the coefficient of <code>i</code> will be
                     <code>
-                        <var>A_IMAG_COLORED</var> <var>OPERATOR</var>  \color{<var>BLUE</var>}{<var>negParens(B_IMAG)</var>}
+                        \orange{<var>A_IMAG</var>} <var>OPERATOR</var>  \blue{<var>negParens(B_IMAG)</var>}=<var>ANSWER_IMAG</var>
                     </code>,
-                    which equals <code><var>ANSWER_IMAG</var></code>.
+                    so the imaginary component of the result is <code><var>ANSWER_IMAG</var>i</code>.
                 </p>
                 <p>
-                    The result is <code><var>complexNumber(ANSWER_REAL, ANSWER_IMAG)</var></code>.
+                    Combining the real and imaginary components, the result is <code><var>complexNumber(ANSWER_REAL, ANSWER_IMAG)</var></code>.
                 </p>
             </div>
         </div>
