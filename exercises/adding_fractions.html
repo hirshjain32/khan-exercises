@@ -49,21 +49,29 @@
     </div>
 
     <div class="hints">
-        <div data-if="GCD1 !== 1 || GCD2 !== 1">
-            <p>Simplify each fraction.</p>
-            <p><code><var>fraction( SIMP_N1, SIMP_D1 )</var> + <var>fraction( SIMP_N2, SIMP_D2 )</var></code></p>
+        <div data-if="GCD1 !== 1">
+            <p>Note that <code><var>N1</var></code> and <code><var>D1</var></code> are both divisible by <code>\blue{<var>GCD1</var>}</code>. Hence, we know that <code><var>fraction( N1, D1 )</var></code> is not in lowest terms. Reducing, we find that <code><var>fraction( N1, D1 )</var> = \blue{<var>fraction( SIMP_N1, SIMP_D1 )</var>}</code>.</p>
         </div>
-        <p>Find a common denominator by finding the least common multiple of <code><var>SIMP_D1</var></code> and <code><var>SIMP_D2</var></code>.</p>
-        <p><code>\lcm(<var>SIMP_D1</var>, <var>SIMP_D2</var>) = <var>LCM</var></code></p>
+		<div data-if="GCD2 !== 1">
+			<p>Note that <code><var>N2</var></code> and <code><var>D2</var></code> are both divisible by <code>\green{<var>GCD2</var>}</code>. Hence, we know that <code><var>fraction( N2, D2 )</var></code> is not in lowest terms. Reducing, we find that <code><var>fraction( N2, D2 )</var> = \green{<var>fraction( SIMP_N2, SIMP_D2 )</var>}</code>.</p>
+        </div>
+		<p>The fractions are <span data-if="GCD1 !==1 || GCD2 !== 1">now</span> in lowest terms, so we need to find a common denominator by finding the least common multiple of <code>\blue{<var>SIMP_D1</var>}</code> and <code>\green{<var>SIMP_D2</var>}</code>.</p>
+        <p>Using the prime factorization of each value, we find: <code>\lcm(\blue{<var>SIMP_D1</var>}, \green{<var>SIMP_D2</var>}) = <var>LCM</var></code>.</p>
+		<p>We need to change each fraction to have a denominator of <code><var>LCM</var></code>. Hence, we can multiply <code>\blue{<var>fraction( SIMP_N1, SIMP_D1 )</var>}</code> by <code><var>fraction( LCM / SIMP_D1, LCM / SIMP_D1 )</code>, and we can multiply <code>\green{<var>fraction( SIMP_N2, SIMP_D2 )</var>}</code> by <code><var>fraction( LCM / SIMP_D2, LCM / SIMP_D2 )</var></code>. </p>
+		<div>
+            <p><code>\blue{<var>fraction( SIMP_N1, SIMP_D1 )</var>} + \green{<var>fraction( SIMP_N2, SIMP_D2 )</var>}</code></p>
+            <p><code>=\blue{<var>fraction( SIMP_N1, SIMP_D1 )</var>}\cdot <var>fraction( LCM / SIMP_D1, LCM / SIMP_D1 )</var> + \green{<var>fraction( SIMP_N2, SIMP_D2 )</var>}\cdot <var>fraction( LCM / SIMP_D2, LCM / SIMP_D2 )</var></code></p>
+        </div>
         <div>
-            <p>Change each fraction to an equivalent fraction with a denominator of <code><var>LCM</var></code>.</p>
-            <p><code><var>fraction( SIMP_N1, SIMP_D1 )</var> + <var>fraction( SIMP_N2, SIMP_D2 )</var></code></p>
-            <p><code>=<var>fraction( SIMP_N1, SIMP_D1 )</var> <span data-if="LCM !== SIMP_D1">\cdot <var>fraction( LCM / SIMP_D1, LCM / SIMP_D1 )</var></span> + <var>fraction( SIMP_N2, SIMP_D2 )</var> <span data-if="LCM !== SIMP_D2">\cdot <var>fraction( LCM / SIMP_D2, LCM / SIMP_D2 )</var></span></code></p>
+			<p>Computing the numerator of each of the two fractions:
+			<p><code>=<var>fraction( SIMP_N1 * LCM / SIMP_D1, LCM )</var> + <var>fraction( SIMP_N2 * LCM / SIMP_D2, LCM )</var></code></p>
         </div>
-        <p><code>=<var>fraction( SIMP_N1 * LCM / SIMP_D1, LCM )</var> + <var>fraction( SIMP_N2 * LCM / SIMP_D2, LCM )</var></code></p>
-        <p><code>=<var>fraction( SIMP_N1 * LCM / SIMP_D1 + SIMP_N2 * LCM / SIMP_D2, LCM )</var></code></p>
-        <div data-if="getGCD( SIMP_N1 * LCM / SIMP_D1 + SIMP_N2 * LCM / SIMP_D2, LCM ) !== 1">
-            <p>Simplify.</p>
+		<div>
+			<p>Now that the two fractions have the same denominator, we simply add the numerators:
+			<p><code>=<var>fraction( SIMP_N1 * LCM / SIMP_D1 + SIMP_N2 * LCM / SIMP_D2, LCM )</var></code></p>
+        </div>
+		<div data-if="getGCD( SIMP_N1 * LCM / SIMP_D1 + SIMP_N2 * LCM / SIMP_D2, LCM ) !== 1">
+            <p>We see that the numerator and denominator are both divisible by <code><var>getGCD( SIMP_N1 * LCM / SIMP_D1 + SIMP_N2 * LCM / SIMP_D2, LCM )</var></code>. Reducing by this, we have</p>
             <p><code>=<var>fractionReduce( SIMP_N1 * LCM / SIMP_D1 + SIMP_N2 * LCM / SIMP_D2, LCM )</var></code></p>
         </div>
     </div>
