@@ -27,10 +27,10 @@
                 <p>The sum of an arithmetic series is the number of terms in the series times the average of the first and last terms.</p>
                 <div id="recursive-hints" data-unwrap></div>
                 <p>To find the sum of the first <var>N &lt; 10 ? cardinal(N) : N</var> terms, we'll need the first and <var>ordinal(N)</var> terms of the series.</p>
-                <p>The first term is <code><var>A</var></code> and the <var>ordinal(N)</var> term is equal to <code>a_{<var>N</var>} = <var>A</var> + <var>D</var> (<var>N</var> - 1) = <var>A + D * (N - 1)</var></code>.</p>
+                <p>The first term is <code>\blue{<var>A</var>}</code> and the <var>ordinal(N)</var> term is equal to <code>a_{<var>N</var>} = \blue{<var>A</var>} + \green{<var>D</var>} (\pink{<var>N</var>} - 1) = \pink{<var>A + D * (N - 1)</var>}</code>.</p>
                 <div>
                     <p>Therefore, the sum of the first <var>N &lt; 10 ? cardinal(N) : N</var> terms is</p>
-                    <p><code>\qquad n\left(\dfrac{a_1 + a_{<var>N</var>}}{2}\right) = <var>N</var> \left(\dfrac{<var>A</var> + <var>A + D * (N - 1)</var>}{2}\right) = <var>SUM</var></code>.
+                    <p><code>\qquad n\left(\dfrac{\blue{a_1} + \pink{a_{<var>N</var>}}}{2}\right) = <var>N</var> \left(\dfrac{\blue{<var>A</var>} + \pink{<var>A + D * (N - 1)</var>}}{2}\right) = <var>SUM</var></code>.
                 </div>
             </div>
         </div>
@@ -44,8 +44,8 @@
 
             <div class="hints" data-apply="appendContents">
                 <div id="recursive-hints" data-unwrap>
-                    <p>First, let's find the explicit formula for the terms of the arithmetic series. We can see that the first term is <code><var>A</var></code> and the common difference is <code><var>D</var></code>.</p>
-                    <p>Thus, the explicit formula for this sequence is <code>a_i = <var>A</var> + <var>D</var>(i - 1)</code>.</p>
+                    <p>First, let's find the explicit formula for the terms of the arithmetic series. We can see that the first term is <code>\blue{<var>A</var>}</code> and the common difference is <code>\green{<var>D</var>}</code>.</p>
+                    <p>Thus, the explicit formula for this sequence is <code>a_i = \blue{<var>A</var>} + \green{<var>D</var>}(\pink{i} - 1)</code>.</p>
                 </div>
             </div>
         </div>
