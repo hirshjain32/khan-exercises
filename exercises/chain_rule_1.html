@@ -89,11 +89,11 @@
         </div>
 
         <div class="hints">
-            <p><code><var>NOTATION.ddxF</var> = (</code> derivative of <code><var>OUTER.fText</var></code> with respect to <code><var>INNER.fText</var>
-            ) \cdot (</code> derivative of <code><var>INNER.fText</var></code> with respect to <code>x)</code></p>
+            <p><code><var>NOTATION.ddxF</var> = (</code>derivative of <code>\green{<var>OUTER.fText</var>}</code> with respect to <code>\blue{<var>INNER.fText</var>}
+            ) \cdot (</code>derivative of <code>\blue{<var>INNER.fText</var>}</code> with respect to <code>\red{x})</code></p>
 
-            <p>The derivative of <code><var>OUTER.fText</var></code> with respect to <code><var>INNER.fText</var></code> is <code><var>OUTER.ddxFText</var></code>.</p>
-            <p>The derivative of <code><var>INNER.fText</var></code> with respect to <code>x</code> is <code><var>INNER.ddxFText</var></code>.</p>
+            <p>The derivative of <code>\green{<var>OUTER.fText</var>}</code> with respect to <code>\blue{<var>INNER.fText</var>}</code> is <code><var>OUTER.ddxFText</var></code>.</p>
+            <p>The derivative of <code>\blue{<var>INNER.fText</var>}</code> with respect to <code>\red{x}</code> is <code><var>INNER.ddxFText</var></code>.</p>
 
             <p data-if="DERIVATIVE_SIMPLIFICATIONS.length !== 0">The derivative at this point is <code><var>expr(UNSIMPLIFIED_DERIVATIVE)</var></code>, but this expression can be simplified.</p>
 
